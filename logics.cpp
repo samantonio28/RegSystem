@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <vector>
-//                   it's required to solve the "login = loGin" problem
 
 using namespace std;
 
@@ -26,9 +25,20 @@ void filling() {
 	}
 }     
 
+string toUpperStr(string str) {
+	for (int i = 0; i < str.size(); i++) {
+		if (isalpha(str[i])) {
+			str[i] = toupper(str[i]);
+		}
+	}
+	return str;
+}
+
 string isCorrect() {
 	string login;
 	cin >> login;
+	// here will be function with toupper()
+	login = toUpperStr(login);
 	int flag = 0;
 	for (int i = 0; i < loginsNow.size(); i++) {
 		if (login == loginsNow[i]) {
@@ -75,6 +85,7 @@ void SignUp() {
 
 void LogIn() {
 	cout << "\nfunc LogIn\n";
+	// is requierd to use toUpperStr(..) here, don't forget
 }
 
 int main() {

@@ -1,2 +1,0 @@
-Your login is login
-Your password is pass
